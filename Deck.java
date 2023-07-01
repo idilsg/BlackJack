@@ -24,6 +24,6 @@ public class Deck {
 
         ArrayList<String> deck = new ArrayList<>(Arrays.asList(predeck));
         Collections.shuffle(deck);
-        //System.out.print(deck);
+        System.out.print(deck); //test
     }
 }
