@@ -1,7 +1,8 @@
 // ♠ ♣ ♦ ♥
 
-import java.util.Arrays;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 
 public class Deck {
     public void deck(){
@@ -21,7 +22,8 @@ public class Deck {
             System.out.print(s + " ");
         } */
 
-        ArrayList<String> deck = new ArrayList<String>(Arrays.asList(predeck));
-        System.out.print(deck);
+        ArrayList<String> deck = new ArrayList<>(Arrays.asList(predeck));
+        Collections.shuffle(deck);
+        //System.out.print(deck);
     }
 }
