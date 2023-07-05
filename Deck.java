@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.Collections;
 
 public class Deck {
-    public void deck(){
+    public ArrayList<String> deck(){
         String[] suits = {"♠", "♣", "♦", "♥"};
         String[] ranks = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
         String[] predeck = new String[52];
@@ -25,5 +25,7 @@ public class Deck {
         ArrayList<String> deck = new ArrayList<>(Arrays.asList(predeck));
         Collections.shuffle(deck);
         System.out.print(deck); //test
+
+        return deck;
     }
 }
