@@ -16,14 +16,18 @@ public class Game {
         while (continueLoop) {
             switch (check) {
                 case 1:
-                    //falan filan
+                    Deal deal = new Deal();
+                    deal.playerTakesCard();
+                    //21'i geçip geçmediğine bak
                     break;
                 case 2:
-                    //falan filan
+                    //21'i geçip geçmediğine bak
                     continueLoop = false;
                     break;
                 default:
-                    //tekrar sor
+                    System.out.println("Invalid choice. Choose again: ");
+                    System.out.println("Continue (1) \nStop (2)"); //while döngüsüne al
+                    check = sc.nextInt();
             }
         }
     }
