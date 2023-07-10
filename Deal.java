@@ -9,8 +9,8 @@ public class Deal {
         ArrayList<String> playersCards = player.getPlayersCards();
 
         String firstElement = shuffledDeck.get(0);
-        shuffledDeck.remove(0);
         playersCards.add(firstElement);
+        shuffledDeck.remove(0);
     }
 
     public void dealerTakesCard(){
@@ -21,7 +21,7 @@ public class Deal {
         ArrayList<String> dealersCards = dealer.getDealersCards();
 
         String firstElement = shuffledDeck.get(0);
-        shuffledDeck.remove(0);
         dealersCards.add(firstElement);
+        shuffledDeck.remove(0);
     }
 }
