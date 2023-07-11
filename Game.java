@@ -8,12 +8,12 @@ public class Game {
         System.out.println("Enter your name: ");
         String name = sc.nextLine(); //High score list'te ismi kullanırsın.
 
-        //Asking player if they want to take more cards.
-        System.out.println("Continue (1) \nStop (2)"); //while döngüsüne al
-        int check = sc.nextInt();
         boolean continueLoop = true;
 
         while (continueLoop) {
+            //Asking player if they want to take more cards.
+            System.out.println("Continue (1) \nStop (2)");
+            int check = sc.nextInt();
             switch (check) {
                 case 1:
                     Deal deal = new Deal();
@@ -26,8 +26,6 @@ public class Game {
                     break;
                 default:
                     System.out.println("Invalid choice. Choose again: ");
-                    System.out.println("Continue (1) \nStop (2)"); //while döngüsüne al
-                    check = sc.nextInt();
             }
         }
     }
