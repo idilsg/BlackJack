@@ -1,9 +1,12 @@
 import java.util.ArrayList;
 
 public class Deal {
-    public void playerTakesCard(){
+
+    public void dealV{
         Deck deck = new Deck();
         ArrayList<String> shuffledDeck = deck.deck();
+    }
+    public void playerTakesCard(){
 
         Player player = new Player();
         ArrayList<String> playersCards = player.getPlayersCards();

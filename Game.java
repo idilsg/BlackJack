@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Game {
@@ -8,6 +9,10 @@ public class Game {
         System.out.println("Enter your name: ");
         String name = sc.nextLine(); //High score list'te ismi kullanırsın.
 
+        Player player = new Player();
+        ArrayList<String> playersCards = player.getPlayersCards();
+        Deal deal = new Deal();
+
         boolean continueLoop = true;
 
         //oyuncu kart çekiyor
@@ -17,7 +22,6 @@ public class Game {
             int check = sc.nextInt();
             switch (check) {
                 case 1:
-                    Deal deal = new Deal();
                     deal.playerTakesCard();
                     break;
                 case 2:
@@ -26,7 +30,7 @@ public class Game {
                 default:
                     System.out.println("Invalid choice. Choose again: ");
             }
-            // System.out.print(playersCards); //test
+            System.out.print(playersCards); //test
             //21'i geçip geçmediğine bak
             //if (geçti) lose;
         }
