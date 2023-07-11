@@ -18,13 +18,9 @@ public class Deck {
             }
         }
 
-        /* for(String s: predeck){
-            System.out.print(s + " ");
-        } */
-
         ArrayList<String> deck = new ArrayList<>(Arrays.asList(predeck));
         Collections.shuffle(deck);
-        System.out.print(deck); //test
+        //System.out.print(deck); //test
 
         return deck;
     }
