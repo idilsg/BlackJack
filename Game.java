@@ -23,6 +23,7 @@ public class Game {
         System.out.println(dealer.getDealersCards() + " *");
         deal.dealerTakesCard();
 
+
         //oyuncu kart çekiyor
         while (continueLoop) {
             //Asking player if they want to take more cards.
