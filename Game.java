@@ -17,10 +17,10 @@ public class Game {
         //ilk dağıtım
         deal.playerTakesCard();
         deal.playerTakesCard();
-        System.out.println(player.getPlayersCards());
+        System.out.println("Your cards: " + player.getPlayersCards());
 
         deal.dealerTakesCard();
-        System.out.println(dealer.getDealersCards() + " *");
+        System.out.println("Dealers cards: " + dealer.getDealersCards() + " *");
         deal.dealerTakesCard();
 
 
