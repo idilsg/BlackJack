@@ -1,18 +1,21 @@
 import java.util.ArrayList;
 
 public class Deal {
+    private Player player;
+    private Dealer dealer;
 
-    public void dealV{
-        Deck deck = new Deck();
-        ArrayList<String> shuffledDeck = deck.deck();
+    public Deal(Player player, Dealer dealer) {
+        this.player = player;
+        this.dealer = dealer;
     }
+
     public void playerTakesCard(){
 
-        Player player = new Player();
-        ArrayList<String> playersCards = player.getPlayersCards();
+        Deck deck = new Deck();
+        ArrayList<String> shuffledDeck = deck.deck();
 
         String firstElement = shuffledDeck.get(0);
-        playersCards.add(firstElement);
+        player.getPlayersCards().add(firstElement);
         shuffledDeck.remove(0);
     }
 
@@ -20,11 +23,8 @@ public class Deal {
         Deck deck = new Deck();
         ArrayList<String> shuffledDeck = deck.deck();
 
-        Dealer dealer = new Dealer();
-        ArrayList<String> dealersCards = dealer.getDealersCards();
-
         String firstElement = shuffledDeck.get(0);
-        dealersCards.add(firstElement);
+        dealer.getDealersCards().add(firstElement);
         shuffledDeck.remove(0);
     }
 }
