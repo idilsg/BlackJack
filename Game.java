@@ -44,6 +44,14 @@ public class Game {
             //if (geçti) lose;
         }
 
+        //dağıtıcı kart çekiyor
+        /* if(oyun devam ediyorsa){
+            while (16 yı geçene kadar){
+                deal.dealerTakesCard();
+            }
+            System.out.println("Dealers cards: " + dealer.getDealersCards());
+        } */
+
         //oyuncu 21'i geçip kaybettiyse bu bölüme geçmene gerek yok
         //dağıtıcı 16'yı geçene kadar kart çeksin.
         //her kart çektiğinde 21'i geçip geçmediğini kontrol et. geçerse oyuncu kazanır.
