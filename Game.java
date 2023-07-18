@@ -39,7 +39,9 @@ public class Game {
                 default:
                     System.out.println("\nInvalid choice. Choose again: ");
             }
-            System.out.print(player.getPlayersCards()); //test
+            System.out.print(player.getPlayersCards());
+            PointCalculator calculator = new PointCalculator();
+            calculator.pointsP(player.getPlayersCards()); //puan toplama
             //21'i geçip geçmediğine bak
             //if (geçti) lose;
         }
