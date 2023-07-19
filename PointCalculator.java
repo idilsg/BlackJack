@@ -46,7 +46,7 @@ public class PointCalculator {
         return playersPoints;
     }
 
-    public void pointsD(ArrayList<String> dealerCards){
+    public int pointsD(ArrayList<String> dealerCards){
         int dealersPoints = 0;
 
         for (String card : dealerCards) {
@@ -87,10 +87,6 @@ public class PointCalculator {
                     break;
             }
         }
-    }
-
-    public boolean loseCheck(){
-        //her tur 21'in geçilip geçilmediğini kontrol eden bir metot yaz
-        return true;
+        return dealersPoints;
     }
 }

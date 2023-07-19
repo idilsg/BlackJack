@@ -45,8 +45,13 @@ public class Game {
             }
             System.out.println(player.getPlayersCards());
 
-            //21'i geçip geçmediğine bak
-            //if (geçti) lose;
+            playersPoints = calculator.pointsP(player.getPlayersCards());
+            calculator.pointsP(player.getPlayersCards()); //puan toplama
+            if(playersPoints > 21){
+                System.out.println("Player's points: " + playersPoints);
+                System.out.println("You lose.");
+                continueLoop = false;
+            }
         }
 
         //dağıtıcı kart çekiyor
