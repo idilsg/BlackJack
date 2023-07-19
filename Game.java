@@ -87,5 +87,22 @@ public class Game {
             System.out.println("Dealers points: " + dealersPoints);
             System.out.println("while test 2"); //BUNU DA SİL
         }
+
+        if (continueGame) {
+            int playersPoints = calculator.pointsP(player.getPlayersCards());
+            calculator.pointsP(player.getPlayersCards());
+            int dealersPoints = calculator.pointsD(dealer.getDealersCards());
+            calculator.pointsD(dealer.getDealersCards());
+
+            if (playersPoints > dealersPoints){
+                System.out.println("Player wins!");
+            }
+            else if (dealersPoints > playersPoints){
+                System.out.println("Dealer wins!");
+            }
+            else{
+                System.out.println("Equal!");
+            }
+        }
     }
 }
