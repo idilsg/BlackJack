@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class PointCalculator {
 
-    public void pointsP(ArrayList<String> playerCards){
+    public int pointsP(ArrayList<String> playerCards){
         int playersPoints = 0;
 
         for (String card : playerCards) {
@@ -43,6 +43,7 @@ public class PointCalculator {
                     break;
             }
         }
+        return playersPoints;
     }
 
     public void pointsD(ArrayList<String> dealerCards){

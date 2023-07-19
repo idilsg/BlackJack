@@ -11,6 +11,7 @@ public class Game {
         Player player = new Player();
         Dealer dealer = new Dealer();
         Deal deal = new Deal(player, dealer);
+        PointCalculator calculator = new PointCalculator();
 
         boolean continueLoop = true;
 
@@ -26,6 +27,9 @@ public class Game {
 
         //oyuncu kart çekiyor
         while (continueLoop) {
+            int playersPoints = calculator.pointsP(player.getPlayersCards());
+            calculator.pointsP(player.getPlayersCards()); //puan toplama
+            System.out.println("Player's points: " + playersPoints);
             //Asking player if they want to take more cards.
             System.out.println("\nContinue (1) \nStop (2)");
             int check = sc.nextInt();
@@ -39,9 +43,8 @@ public class Game {
                 default:
                     System.out.println("\nInvalid choice. Choose again: ");
             }
-            System.out.print(player.getPlayersCards());
-            PointCalculator calculator = new PointCalculator();
-            calculator.pointsP(player.getPlayersCards()); //puan toplama
+            System.out.println(player.getPlayersCards());
+
             //21'i geçip geçmediğine bak
             //if (geçti) lose;
         }
