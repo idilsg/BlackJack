@@ -14,6 +14,8 @@ public class Game {
         PointCalculator calculator = new PointCalculator();
 
         boolean continueLoop = true;
+        boolean continueDealer = true;
+        boolean continueGame = true;
 
         //ilk dağıtım
         deal.playerTakesCard();
@@ -44,26 +46,46 @@ public class Game {
                     System.out.println("\nInvalid choice. Choose again: ");
             }
             System.out.println(player.getPlayersCards());
-
             playersPoints = calculator.pointsP(player.getPlayersCards());
             calculator.pointsP(player.getPlayersCards()); //puan toplama
             if(playersPoints > 21){
                 System.out.println("Player's points: " + playersPoints);
                 System.out.println("You lose.");
                 continueLoop = false;
+                continueDealer = false;
+                continueGame = false;
             }
         }
 
-        //dağıtıcı kart çekiyor
-        /* if(oyun devam ediyorsa){
-            while (16 yı geçene kadar){
+        if (continueDealer) {
+            System.out.println("test if çalışıyo mu diye"); //SİLMEYİ UNUTMA BUNU
+            int dealersPoints = calculator.pointsD(dealer.getDealersCards());
+            calculator.pointsD(dealer.getDealersCards());
+            System.out.println("Dealers cards: " + dealer.getDealersCards());
+            System.out.println("Dealers points: " + dealersPoints);
+        }
+
+        while (continueDealer) {
+            System.out.println("while test 1"); //BUNU DA SİL
+            int dealersPoints = calculator.pointsD(dealer.getDealersCards());
+            calculator.pointsD(dealer.getDealersCards());
+
+            if(dealersPoints > 16 && dealersPoints < 22){
+                break;
+            }
+            else if (dealersPoints < 17){
                 deal.dealerTakesCard();
             }
+            else {
+                System.out.println("Dealer lost, you win!");
+                continueGame = false;
+                continueDealer = false;
+            }
+            dealersPoints = calculator.pointsD(dealer.getDealersCards());
+            calculator.pointsD(dealer.getDealersCards());
             System.out.println("Dealers cards: " + dealer.getDealersCards());
-        } */
-
-        //oyuncu 21'i geçip kaybettiyse bu bölüme geçmene gerek yok
-        //dağıtıcı 16'yı geçene kadar kart çeksin.
-        //her kart çektiğinde 21'i geçip geçmediğini kontrol et. geçerse oyuncu kazanır.
+            System.out.println("Dealers points: " + dealersPoints);
+            System.out.println("while test 2"); //BUNU DA SİL
+        }
     }
 }
