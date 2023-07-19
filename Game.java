@@ -58,7 +58,6 @@ public class Game {
         }
 
         if (continueDealer) {
-            System.out.println("test if çalışıyo mu diye"); //SİLMEYİ UNUTMA BUNU
             int dealersPoints = calculator.pointsD(dealer.getDealersCards());
             calculator.pointsD(dealer.getDealersCards());
             System.out.println("Dealers cards: " + dealer.getDealersCards());
@@ -66,7 +65,6 @@ public class Game {
         }
 
         while (continueDealer) {
-            System.out.println("while test 1"); //BUNU DA SİL
             int dealersPoints = calculator.pointsD(dealer.getDealersCards());
             calculator.pointsD(dealer.getDealersCards());
 
@@ -85,7 +83,6 @@ public class Game {
             calculator.pointsD(dealer.getDealersCards());
             System.out.println("Dealers cards: " + dealer.getDealersCards());
             System.out.println("Dealers points: " + dealersPoints);
-            System.out.println("while test 2"); //BUNU DA SİL
         }
 
         if (continueGame) {
