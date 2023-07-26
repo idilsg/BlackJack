@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Game {
@@ -8,6 +9,22 @@ public class Game {
         System.out.println("Enter your name: ");
         String name = sc.nextLine(); //High score list'te ismi kullanırsın.
 
+        int coins = 100;
+        int enteredCoin = 0;
+
+        while (true) {
+            System.out.println("How many coins do you want to enter the game with? ");
+            System.out.println("Current Total: " + coins);
+            try {
+                enteredCoin = sc.nextInt();
+                break;
+            } catch(InputMismatchException e){
+                String input = sc.next();
+                System.out.println("You must enter an integer. ");
+            }
+            System.out.println("Number of coins entered: " + enteredCoin);
+        }
+
         Player player = new Player();
         Dealer dealer = new Dealer();
         Deal deal = new Deal(player, dealer);
@@ -16,6 +33,7 @@ public class Game {
         boolean continueLoop = true;
         boolean continueDealer = true;
         boolean continueGame = true;
+        int win = 1; //win=1, lose=0, equal=2
 
         //ilk dağıtım
         deal.playerTakesCard();
@@ -54,6 +72,7 @@ public class Game {
                 continueLoop = false;
                 continueDealer = false;
                 continueGame = false;
+                win = 0;
             }
         }
 
@@ -61,7 +80,7 @@ public class Game {
             int dealersPoints = calculator.pointsD(dealer.getDealersCards());
             calculator.pointsD(dealer.getDealersCards());
             System.out.println("Dealers cards: " + dealer.getDealersCards());
-            System.out.println("Dealers points: " + dealersPoints);
+            System.out.println("Dealers points: " + dealersPoints + "\n");
         }
 
         while (continueDealer) {
@@ -82,7 +101,7 @@ public class Game {
             dealersPoints = calculator.pointsD(dealer.getDealersCards());
             calculator.pointsD(dealer.getDealersCards());
             System.out.println("Dealers cards: " + dealer.getDealersCards());
-            System.out.println("Dealers points: " + dealersPoints);
+            System.out.println("Dealers points: " + dealersPoints + "\n");
         }
 
         if (continueGame) {
@@ -93,13 +112,21 @@ public class Game {
 
             if (playersPoints > dealersPoints){
                 System.out.println("Player wins!");
+                win = 1;
             }
             else if (dealersPoints > playersPoints){
                 System.out.println("Dealer wins!");
+                win = 0;
             }
-            else{
+            else {
                 System.out.println("Equal!");
+                win = 2;
             }
         }
+
+        if (win == 1) coins = coins + enteredCoin;
+        if (win == 0) coins = coins - enteredCoin;
+
+        System.out.println("Current total coins: " + coins);
     }
 }
