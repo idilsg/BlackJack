@@ -129,18 +129,25 @@ public class Game {
 
             System.out.println("Current total coins: " + coins);
 
-            System.out.println("Do you want to continue the game? ");
-            System.out.println("Yes (1) \nNo (2) ");
-            int check2 = sc.nextInt();
-            switch (check2) {
-                case 1:
-                    System.out.println("Next Game");
-                    break;
-                case 2:
-                    nextGame = false;
-                    break;
-                default:
-                    System.out.println("Invalid choice. Choose again: ");
+            if (coins <= 0){
+                System.out.println("You went bankrupt!");
+                nextGame = false;
+            }
+
+            if (coins > 0) {
+                System.out.println("Do you want to continue the game? ");
+                System.out.println("Yes (1) \nNo (2) ");
+                int check2 = sc.nextInt();
+                switch (check2) {
+                    case 1:
+                        System.out.println("Next Game");
+                        break;
+                    case 2:
+                        nextGame = false;
+                        break;
+                    default:
+                        System.out.println("Invalid choice. Choose again: ");
+                }
             }
         }
     }
