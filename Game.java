@@ -15,19 +15,22 @@ public class Game {
         int enteredCoin = 0;
 
         while (nextGame) {
-
             while (true) {
                 System.out.println("How many coins do you want to enter the game with? ");
                 System.out.println("Current Total: " + coins);
                 try {
                     enteredCoin = sc.nextInt();
-                    break;
+                    if (enteredCoin <= coins) {
+                        break;
+                    } else {
+                        System.out.println("You cannot enter more coins than the current total. Please try again.");
+                    }
                 } catch (InputMismatchException e) {
                     String input = sc.next();
                     System.out.println("You must enter an integer. ");
                 }
-                System.out.println("Number of coins entered: " + enteredCoin);
             }
+            System.out.println("Number of coins entered: " + enteredCoin);
 
             Player player = new Player();
             Dealer dealer = new Dealer();
