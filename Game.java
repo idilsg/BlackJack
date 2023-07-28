@@ -2,7 +2,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Game {
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
         //Asking players name
         Scanner sc = new Scanner(System.in);
@@ -14,7 +14,7 @@ public class Game {
         int coins = 100;
         int enteredCoin = 0;
 
-        while(nextGame) {
+        while (nextGame) {
 
             while (true) {
                 System.out.println("How many coins do you want to enter the game with? ");
@@ -37,6 +37,7 @@ public class Game {
             boolean continueLoop = true;
             boolean continueDealer = true;
             boolean continueGame = true;
+            boolean continue1 = true;
             int win = 1; //win=1, lose=0, equal=2
 
             //ilk dağıtım
@@ -129,24 +130,33 @@ public class Game {
 
             System.out.println("Current total coins: " + coins);
 
-            if (coins <= 0){
+            if (coins <= 0) {
                 System.out.println("You went bankrupt!");
                 nextGame = false;
+                continue1 = false;
             }
 
-            if (coins > 0) {
-                System.out.println("Do you want to continue the game? ");
-                System.out.println("Yes (1) \nNo (2) ");
-                int check2 = sc.nextInt();
-                switch (check2) {
-                    case 1:
-                        System.out.println("Next Game");
-                        break;
-                    case 2:
-                        nextGame = false;
-                        break;
-                    default:
-                        System.out.println("Invalid choice. Choose again: ");
+            while (continue1) {
+                if (coins > 0) {
+                    System.out.println("Do you want to continue the game? ");
+                    System.out.println("Yes (1) \nNo (2) ");
+                    try {
+                        int check2 = sc.nextInt();
+                        switch (check2) {
+                            case 1:
+                                System.out.println("Next Game");
+                                continue1 = false;
+                                break;
+                            case 2:
+                                nextGame = false;
+                                break;
+                            default:
+                                System.out.println("Invalid choice. Choose again: ");
+                        }
+                    } catch (InputMismatchException e) {
+                        System.out.println("Invalid input. Please enter a valid integer.");
+                        sc.nextLine();
+                    }
                 }
             }
         }
